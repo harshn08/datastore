@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# creates the python classes for our .proto
+#
+
+project_base="/usr/parin/Downloads/folder/core-netty-4.2"
+protoc_home="/usr/local/bin"
+
+rm ${project_base}/python/comm_pb2.py
+
+${protoc_home}/protoc -I=${project_base}/resources --python_out=. ${project_base}/resources/comm.proto 
